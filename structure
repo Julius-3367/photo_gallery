@@ -1,0 +1,7 @@
+photo_gallery/
+├── app.py
+├── static/
+│   └── uploads/
+└── templates/
+    └── gallery.html
+

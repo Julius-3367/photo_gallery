@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Gallery</title>
+    <style>
+        .gallery img {
+            width: 150px;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Your Photos</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Your Gallery</h2>
+    <div class="gallery">
+        {% for image in images %}
+            <div>
+                <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="photo">
+                <form action="{{ url_for('delete_file', filename=image) }}" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
