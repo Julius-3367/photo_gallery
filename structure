@@ -1,7 +1,11 @@
 photo_gallery/
-├── app.py
-├── static/
-│   └── uploads/
-└── templates/
-    └── gallery.html
-
+├── app.py                   # Main Flask application
+├── templates/
+│   ├── base.html            # Base template with common layout
+│   ├── gallery.html         # Gallery page with photo upload, like, and comment features
+│   ├── about.html           # About page
+│   └── contact.html         # Contact page
+└── static/
+    ├── uploads/             # Folder for storing uploaded photos
+    └── css/
+        └── styles.css       # Main CSS for styling the app
